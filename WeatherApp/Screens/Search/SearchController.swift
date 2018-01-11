@@ -3,6 +3,7 @@ import UIKit
 class SearchController: BaseController,
                         UITextFieldDelegate {
   
+    
   //the only textfield outlet
   @IBOutlet private weak var zipTextField: UITextField!
   
