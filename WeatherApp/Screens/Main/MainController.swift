@@ -65,7 +65,7 @@ class MainController: BaseController {
 //    windSpeedLabel.text  = self.measureValue == 0 ? String(describing: (object.wind?.speed)!) + " m/s" : DistanceConverter.meterPerSecondToMilesPerHour(value: (object.wind?.speed)!) + " Wind Speed mph"
 //    winHeadingLabel.text = String(describing: (object.wind?.deg)!) + " °"
     
-    sunriseLabe
+    //sunriseLabe
     sunriseLabel.text    = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunrise)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunrise)!)
     sunsetLabel.text     = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunset)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunset)!)
     
