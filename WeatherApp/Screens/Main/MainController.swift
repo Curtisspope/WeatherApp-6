@@ -50,15 +50,15 @@ class MainController: BaseController {
     weatherTypeIconImageView.image = UIImage(named: "weather/\(String(describing: (object.weather![0].icon)!))")
     weatherTypeIconImageView.imageFromServerURL(urlString: "http://openweathermap.org/img/w/\((object.weather![0].icon)!).png")
     
-    weatherHeaderLabel.text = object.weather![0].header
-    weatherDescriptionLabel.text = object.weather![0].description
+   // weatherHeaderLabel.text = object.weather![0].header
+   // weatherDescriptionLabel.text = object.weather![0].description
     
     weatherTempLabel.text = self.tempValue == 0 ? DegreeConverter.getCelsius(kelvinTemp: Double((object.main?.temp)!)) : DegreeConverter.getFahrenheit(kelvinTemp: Double((object.main?.temp)!))
     
-    weatherTempMeasureImageView.image = self.tempValue == 0 ? UIImage(named: "interface/celcius") : UIImage(named: "interface/fahreinheit")
-    weatherTempRangeMeasureImageView.image = self.tempValue == 0 ? UIImage(named: "interface/celcius") : UIImage(named: "interface/fahreinheit")
+    //weatherTempMeasureImageView.image = self.tempValue == 0 ? UIImage(named: "interface/celcius") : UIImage(named: "interface/fahreinheit")
+   // weatherTempRangeMeasureImageView.image = self.tempValue == 0 ? UIImage(named: "interface/celcius") : UIImage(named: "interface/fahreinheit")
 
-    weatherTempRangeLabel.text = self.tempValue == 0 ? DegreeConverter.getCelsius(kelvinTemp: Double((object.main?.tempMin)!)) + "   " + DegreeConverter.getCelsius(kelvinTemp: Double((object.main?.tempMax)!)) : DegreeConverter.getFahrenheit(kelvinTemp: Double((object.main?.tempMin)!)) + "   " + DegreeConverter.getFahrenheit(kelvinTemp: Double((object.main?.tempMax)!))
+    //weatherTempRangeLabel.text = self.tempValue == 0 ? DegreeConverter.getCelsius(kelvinTemp: Double((object.main?.tempMin)!)) + "   " + DegreeConverter.getCelsius(kelvinTemp: Double((object.main?.tempMax)!)) : DegreeConverter.getFahrenheit(kelvinTemp: Double((object.main?.tempMin)!)) + "   " + DegreeConverter.getFahrenheit(kelvinTemp: Double((object.main?.tempMax)!))
     
 //    humidityLabel.text   = String(describing: (object.main?.humidity)!) + "%"
 //    pressureLabel.text   = String(describing: (object.main?.pressure)!) + " Pressure hPa"
@@ -66,11 +66,13 @@ class MainController: BaseController {
 //    winHeadingLabel.text = String(describing: (object.wind?.deg)!) + " °"
     
     //sunriseLabe
-    sunriseLabel.text    = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunrise)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunrise)!)
-    sunsetLabel.text     = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunset)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunset)!)
-    
+//    sunriseLabel.text    = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunrise)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunrise)!)
+//    sunsetLabel.text     = self.measureValue == 0 ? TimeConverter.getTime24h(unixTime: (object.sys?.sunset)!) : TimeConverter.getTimeAMPM(unixTime: (object.sys?.sunset)!)
+//
     cityLabel.text       = String(describing: (object.cityName)!)
-    countryLabel.text    = CountryHelper.getCountryName(isoCode: (object.sys?.country)!)
+    
+    //print(object.sys.to)
+//    countryLabel.text    = CountryHelper.getCountryName(isoCode: (object.sys?.country)!)
   }
   
   //moving to location selection screen
